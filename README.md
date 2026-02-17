@@ -24,7 +24,7 @@ Siehe `requirements.txt` für genaue Versionen.
 
 ```bash
 # Repository klonen
-git clone https://github.com/ur/image-pixelator.git
+git clone https://github.com/Chaoskjell/image-pixelator.git
 cd image-pixelator
 
 # Dependencies installieren
