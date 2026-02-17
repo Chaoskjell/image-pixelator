@@ -1,139 +1,200 @@
-Image Pixelator with Binary Pattern Filter 🟦🟧
+🎨 Image Pixelator with Binary Pattern Filters
 
-A Python program that converts images into pixelated blocks filled with binary (1/0) patterns.
-Each block is colored using the average color of the region and filled with patterns such as checkerboard, diagonal, horizontal, or vertical stripes.
+Transform images into stylized pixel art using customizable binary pattern overlays.
+
+Image Pixelator is a Python-based tool that converts images into pixelated blocks filled with structured binary patterns (1/0). Each block preserves the original image’s color by calculating the average RGB value, while applying artistic patterns such as checkerboards or stripes.
+
+📑 Table of Contents
+
+Introduction
+
+Features
+
+Installation
+
+Usage
+
+CLI Arguments
+
+Available Patterns
+
+How It Works
+
+Examples
+
+Dependencies
+
+Project Structure
+
+Troubleshooting
+
+Contributing
+
+License
+
+📌 Introduction
+
+Image Pixelator is a lightweight yet powerful image processing tool designed for:
+
+Creative pixel-art generation
+
+Pattern-based image abstraction
+
+Educational purposes (image processing concepts)
+
+Experimental visual design
+
+It provides both:
+
+🖥️ A graphical user interface (GUI)
+
+💻 A command-line interface (CLI)
 
 ✨ Features
 
-Multiple patterns: checkerboard, diagonal, horizontal, vertical
-
-Configurable block size: adjust the size of the pixel blocks
-
-Both GUI and CLI: user-friendly graphical interface + command line support
-
-Color retention: preserves the original colors by calculating average block color
-
-Fully documented and structured for GitHub
-
-🧩 Requirements
-
-Python 3.8+
-
-Pillow (PIL) — image processing
-
-OpenCV (cv2) — image processing
-
-NumPy — numerical computations
-
-Please refer to requirements.txt for exact versions.
+✔ Pixelation with adjustable block size
+✔ Multiple binary pattern overlays
+✔ Average color preservation per block
+✔ GUI for beginners
+✔ CLI for advanced users & automation
+✔ Clean, modular Python structure
+✔ Supports common image formats
 
 🚀 Installation
-
-Clone the repository and install dependencies:
-
-# Clone the repo
+1️⃣ Clone the Repository
 git clone https://github.com/Chaoskjell/image-pixelator.git
 cd image-pixelator
 
-# Install dependencies
+2️⃣ Install Dependencies
 pip install -r requirements.txt
 
+🐍 Requirements
 
-Alternatively, download the ZIP and open it in a code editor like VS Code — just make sure all dependencies are installed.
+Python 3.8+
 
-📌 Usage
-🖥️ Start the GUI (simple)
+pip
+
+🖥️ Usage
+Start the GUI (Recommended for Beginners)
 python gui_pixelator.py
 
-📟 Use the CLI (advanced)
+Use the CLI (Advanced)
 
 Basic usage:
 
 python image_pixelator.py input.jpg
 
 
-With options:
+With custom parameters:
 
-python image_pixelator.py input.jpg -b 15 -p diagonal -o output.png
+python image_pixelator.py input.jpg -b 20 -p diagonal -o output.png
 
-🧠 CLI Parameters
-Parameter	Short	Description	Default
-input	-	Path to input image (required)	—
+⚙ CLI Arguments
+Argument	Short	Description	Default
+input	—	Path to input image (required)	—
 --block-size	-b	Size of pixel blocks	10
 --pattern	-p	Pattern type	checkerboard
---output	-o	Output file path	output.png
+--output	-o	Output file name	output.png
 🎨 Available Patterns
 
-checkerboard — classic checker pattern
+checkerboard – classic alternating pattern
 
-diagonal — diagonal stripes
+diagonal – diagonal stripes
 
-horizontal — horizontal lines
+horizontal – horizontal lines
 
-vertical — vertical lines
+vertical – vertical lines
 
-📷 Examples
-# Run GUI
-python gui_pixelator.py
+🧠 How It Works
 
-# CLI: Checkerboard with 10x10 blocks
-python image_pixelator.py photo.jpg -b 10 -p checkerboard -o output.png
+Load Image
+The image is opened and converted to RGB.
 
-# CLI: Diagonal pattern with larger blocks
-python image_pixelator.py photo.jpg -b 20 -p diagonal -o diagonal.png
-``` :contentReference[oaicite:5]{index=5}
+Divide into Blocks
+The image is segmented into square blocks (block_size × block_size).
 
----
+Calculate Average Color
+Each block’s mean RGB value is computed.
 
-## 🔍 How It Works
+Apply Binary Pattern
+The selected pattern determines which pixels are:
 
-1. **Load** — input image is loaded and converted to RGB  
-2. **Block Division** — the image is split into `block_size × block_size` blocks  
-3. **Color Calculation** — average color is calculated for each block  
-4. **Pattern Draw** — the chosen pattern is drawn using:
-   * `1` = filled cell with average color  
-   * `0` = empty cell (white)  
-5. **Save** — the final image is saved as PNG/JPG :contentReference[oaicite:6]{index=6}
+1 → filled with average block color
 
----
+0 → white (or empty)
 
-## 📦 Supported Image Formats
+Save Output
+The processed image is exported in the chosen format.
 
-- PNG  
-- JPG/JPEG  
-- BMP  
-- GIF  
-- TIFF :contentReference[oaicite:7]{index=7}
+🖼️ Examples
+# Small detailed blocks
+python image_pixelator.py photo.jpg -b 8 -p checkerboard -o detailed.png
 
----
+# Medium abstraction
+python image_pixelator.py photo.jpg -b 20 -p diagonal -o stylized.png
 
-## ⚡ Performance
+# Large abstract blocks
+python image_pixelator.py photo.jpg -b 40 -p vertical -o abstract.png
 
-- Smaller blocks (5–15): moderate speed with good detail  
-- Medium blocks (15–25): faster with less detail  
-- Large blocks (25+): very fast with minimal detail :contentReference[oaicite:8]{index=8}
+📦 Dependencies
 
----
+Pillow (PIL)
 
-## 🧠 Contributing
+OpenCV (cv2)
 
-Contributions are welcome!  
-Please see `CONTRIBUTING.md` for details on reporting bugs, opening issues, or submitting pull requests. :contentReference[oaicite:9]{index=9}
+NumPy
 
----
+See requirements.txt for exact versions.
 
-## 📞 Contact
+📁 Project Structure
+image-pixelator/
+│
+├── image_pixelator.py      # CLI version
+├── gui_pixelator.py        # GUI version
+├── requirements.txt        # Dependencies
+└── README.md
 
-If you have questions or problems, feel free to open an issue on GitHub. :contentReference[oaicite:10]{index=10}
+⚡ Performance Notes
 
----
+Small block sizes (5–10) → More detail, slower processing
 
-## ❤️ About
+Medium block sizes (15–25) → Balanced performance
 
-Made with ❤️ in Python.  
-MIT Licensed — free for personal and commercial use. :contentReference[oaicite:11]{index=11}
+Large block sizes (30+) → Fast, highly abstract results
 
----
+🛠 Troubleshooting
 
-Wenn du möchtest, kann ich dir die **README auch automatisch als Markdown-Datei** formatieren (z. B. mit TOC, Badges etc.) oder anpassen (z. B. Projektbeschreibung erweitern).
-::contentReference[oaicite:12]{index=12}
+ModuleNotFoundError?
+→ Make sure all dependencies are installed:
+
+pip install -r requirements.txt
+
+
+Image not saving?
+→ Check file path and permissions.
+
+GUI not launching?
+→ Ensure Python 3.8+ is installed and accessible via python.
+
+🤝 Contributing
+
+Contributions are welcome!
+
+Fork the repository
+
+Create a feature branch
+
+Commit your changes
+
+Open a Pull Request
+
+Please keep code clean, documented, and modular.
+
+📄 License
+
+This project is licensed under the MIT License.
+You are free to use, modify, and distribute it for personal and commercial purposes.
+
+❤️ Acknowledgment
+
+Built with Python for creative image experimentation.
