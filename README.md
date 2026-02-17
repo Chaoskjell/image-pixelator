@@ -96,15 +96,12 @@ python image_pixelator.py photo.jpg -b 15 -p checkerboard -o result.png
 ```
 
 # Diagonal pattern with larger blocks
-```bash
-python image_pixelator.py photo.jpg -b 20 -p diagonal -o stylized.png
-Performance Tips
-Small block sizes (5–10 px): High detail, slower processing
+| Blockgröße (px) | Detailgrad | Verarbeitungsgeschwindigkeit | Stil        |
+| --------------- | ---------- | ---------------------------- | ----------- |
+| 5–10            | Hoch       | Langsam                      | Detailliert |
+| 15–25           | Mittel     | Ausgewogen                   | Balanciert  |
+| 30+             | Niedrig    | Schnell                      | Abstrakt    |
 
-Medium block sizes (15–25 px): Balanced detail and speed
-
-Large block sizes (30+ px): Abstracted style, fast processing
-```
 Project Structure
 ```bash
 image-pixelator/
