@@ -6,10 +6,6 @@
 
 **Image Pixelator** is a Python-based tool that transforms images into stylized pixel art using structured binary patterns. It combines classic pixelation with algorithmic pattern overlays while preserving the original color composition of your images.  
 
-![Example Output](images/demo.png)  <!-- Replace with your screenshot path -->
-
----
-
 ## Features
 
 - **Pixel Block Transformation**: Convert images into square blocks of configurable size.  
