@@ -101,12 +101,12 @@ python image_pixelator.py input.jpg -b 20 -p diagonal -o output.png
 ```
 
 CLI Parameters
-Parameter	Short	Description	Default
-input	—	Input image path (required)	—
---block-size	-b	Size of square blocks	10
---pattern	-p	Pattern type	checkerboard
---output	-o	Output file name	output.png
-Available Patterns
+| Parameter       | Short | Description               | Default       |
+|-----------------|-------|---------------------------|---------------|
+| input           | —     | Input image path (required) | —             |
+| --block-size    | -b    | Size of square blocks       | 10            |
+| --pattern       | -p    | Pattern type               | checkerboard  |
+| --output        | -o    | Output file name           | output.png    |
 
 checkerboard – classic alternating blocks
 
