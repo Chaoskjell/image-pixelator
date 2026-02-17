@@ -67,15 +67,12 @@ python gui_pixelator.py
 
 GUI Features:
 
-Select an input image
+-Select an input image
+-Choose block size
+-Select a binary pattern
+-Export the processed image
+-Command-Line Interface (CLI)
 
-Choose block size
-
-Select a binary pattern
-
-Export the processed image
-
-Command-Line Interface (CLI)
 Basic usage:
 ```bash
 
