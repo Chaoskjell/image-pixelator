@@ -21,27 +21,18 @@ Multiple pattern types
 
 Support for common image formats
 
-Features
+## Features
 
-Adjustable pixel block size
-
-Binary pattern rendering:
-
-Checkerboard
-
-Diagonal
-
-Horizontal
-
-Vertical
-
-Average color preservation per block
-
-CLI support for automation and scripting
-
-GUI for simplified usage
-
-Modular and readable Python implementation
+- Adjustable pixel block size
+- Binary pattern rendering:
+  - checkerboard
+  - diagonal
+  - horizontal
+  - vertical
+- Average color preservation per block
+- CLI support for automation and scripting
+- GUI for simplified usage
+- Modular and readable Python implementation
 
 Installation
 
@@ -56,15 +47,12 @@ Install required dependencies:
 pip install -r requirements.txt
 ```
 
-Requirements:
+## Requirements
 
-Python 3.8+
-
-Pillow (PIL)
-
-OpenCV (cv2)
-
-NumPy
+- Python 3.8 or higher
+- Pillow (PIL)
+- OpenCV (cv2)
+- NumPy
 
 Usage
 Graphical Interface (GUI)
@@ -155,13 +143,11 @@ image-pixelator/
 └── README.md               # This file
 ```
 
-Performance Considerations
+## Performance Considerations
 
-Small block sizes (5–10): high detail, slower processing
-
-Medium block sizes (15–25): balanced detail and speed
-
-Large block sizes (30+): abstracted, fast processing
+- Small block sizes (5-10): high detail, slower processing
+- Medium block sizes (15-25): balanced detail and speed
+- Large block sizes (30+): abstracted, fast processing
 
 Contributing
 
