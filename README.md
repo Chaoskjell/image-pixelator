@@ -1,142 +1,57 @@
-🎨 Image Pixelator with Binary Pattern Filters
+Image Pixelator with Binary Pattern Filter
 
-Transform images into stylized pixel art using customizable binary pattern overlays.
+A Python-based image processing tool that transforms images into stylized pixel art using structured binary patterns.
 
-Image Pixelator is a Python-based tool that converts images into pixelated blocks filled with structured binary patterns (1/0). Each block preserves the original image’s color by calculating the average RGB value, while applying artistic patterns such as checkerboards or stripes.
+This project focuses on combining classical pixelation techniques with algorithmic pattern overlays while preserving the original color composition of the image.
 
-📑 Table of Contents
+Overview
 
-Introduction
+Image Pixelator converts an input image into square blocks of configurable size.
+For each block, the average RGB color is calculated and applied to a binary pattern structure (1/0 matrix).
+
+The result is a clean, abstracted representation of the original image with geometric texture.
+
+The application includes:
+
+A graphical user interface (GUI)
+
+A command-line interface (CLI)
+
+Configurable block size
+
+Multiple pattern types
+
+Support for common image formats
 
 Features
 
+Adjustable pixel block size
+
+Binary pattern rendering (checkerboard, diagonal, horizontal, vertical)
+
+Average color preservation per block
+
+CLI support for automation and scripting
+
+GUI for simplified usage
+
+Modular and readable Python implementation
+
 Installation
 
-Usage
+Clone the repository:
 
-CLI Arguments
-
-Available Patterns
-
-How It Works
-
-Examples
-
-Dependencies
-
-Project Structure
-
-Troubleshooting
-
-Contributing
-
-License
-
-📌 Introduction
-
-Image Pixelator is a lightweight yet powerful image processing tool designed for:
-
-Creative pixel-art generation
-
-Pattern-based image abstraction
-
-Educational purposes (image processing concepts)
-
-Experimental visual design
-
-It provides both:
-
-🖥️ A graphical user interface (GUI)
-
-💻 A command-line interface (CLI)
-
-✨ Features
-
-✔ Pixelation with adjustable block size
-✔ Multiple binary pattern overlays
-✔ Average color preservation per block
-✔ GUI for beginners
-✔ CLI for advanced users & automation
-✔ Clean, modular Python structure
-✔ Supports common image formats
-
-🚀 Installation
-1️⃣ Clone the Repository
 git clone https://github.com/Chaoskjell/image-pixelator.git
 cd image-pixelator
 
-2️⃣ Install Dependencies
+
+Install required dependencies:
+
 pip install -r requirements.txt
 
-🐍 Requirements
+Requirements
 
 Python 3.8+
-
-pip
-
-🖥️ Usage
-Start the GUI (Recommended for Beginners)
-python gui_pixelator.py
-
-Use the CLI (Advanced)
-
-Basic usage:
-
-python image_pixelator.py input.jpg
-
-
-With custom parameters:
-
-python image_pixelator.py input.jpg -b 20 -p diagonal -o output.png
-
-⚙ CLI Arguments
-Argument	Short	Description	Default
-input	—	Path to input image (required)	—
---block-size	-b	Size of pixel blocks	10
---pattern	-p	Pattern type	checkerboard
---output	-o	Output file name	output.png
-🎨 Available Patterns
-
-checkerboard – classic alternating pattern
-
-diagonal – diagonal stripes
-
-horizontal – horizontal lines
-
-vertical – vertical lines
-
-🧠 How It Works
-
-Load Image
-The image is opened and converted to RGB.
-
-Divide into Blocks
-The image is segmented into square blocks (block_size × block_size).
-
-Calculate Average Color
-Each block’s mean RGB value is computed.
-
-Apply Binary Pattern
-The selected pattern determines which pixels are:
-
-1 → filled with average block color
-
-0 → white (or empty)
-
-Save Output
-The processed image is exported in the chosen format.
-
-🖼️ Examples
-# Small detailed blocks
-python image_pixelator.py photo.jpg -b 8 -p checkerboard -o detailed.png
-
-# Medium abstraction
-python image_pixelator.py photo.jpg -b 20 -p diagonal -o stylized.png
-
-# Large abstract blocks
-python image_pixelator.py photo.jpg -b 40 -p vertical -o abstract.png
-
-📦 Dependencies
 
 Pillow (PIL)
 
@@ -144,57 +59,91 @@ OpenCV (cv2)
 
 NumPy
 
-See requirements.txt for exact versions.
+Usage
+Graphical Interface
 
-📁 Project Structure
+Run:
+
+python gui_pixelator.py
+
+
+This opens the graphical interface where you can:
+
+Select an image
+
+Choose block size
+
+Select a pattern
+
+Export the processed image
+
+Command Line Interface
+
+Basic usage:
+
+python image_pixelator.py input.jpg
+
+
+With parameters:
+
+python image_pixelator.py input.jpg -b 20 -p diagonal -o output.png
+
+CLI Parameters
+Parameter	Short	Description	Default
+input	—	Input image path (required)	—
+--block-size	-b	Size of square blocks	10
+--pattern	-p	Pattern type	checkerboard
+--output	-o	Output file name	output.png
+Available Patterns
+
+checkerboard
+
+diagonal
+
+horizontal
+
+vertical
+
+Each pattern uses a binary structure:
+
+1 → colored with block average
+
+0 → white pixel
+
+How It Works
+
+The image is loaded and converted to RGB format.
+
+It is divided into square blocks of size block_size × block_size.
+
+The average RGB value is computed for each block.
+
+A predefined binary matrix determines which pixels inside the block are filled.
+
+The final image is saved in the specified format.
+
+Example
+python image_pixelator.py photo.jpg -b 15 -p checkerboard -o result.png
+
+Project Structure
 image-pixelator/
 │
-├── image_pixelator.py      # CLI version
-├── gui_pixelator.py        # GUI version
-├── requirements.txt        # Dependencies
+├── image_pixelator.py
+├── gui_pixelator.py
+├── requirements.txt
 └── README.md
 
-⚡ Performance Notes
+Performance Considerations
 
-Small block sizes (5–10) → More detail, slower processing
+Smaller block sizes produce higher detail and require more processing time.
 
-Medium block sizes (15–25) → Balanced performance
+Larger block sizes increase abstraction and improve performance.
 
-Large block sizes (30+) → Fast, highly abstract results
+Contributing
 
-🛠 Troubleshooting
+Contributions and improvements are welcome.
+Please open an issue or submit a pull request.
 
-ModuleNotFoundError?
-→ Make sure all dependencies are installed:
-
-pip install -r requirements.txt
-
-
-Image not saving?
-→ Check file path and permissions.
-
-GUI not launching?
-→ Ensure Python 3.8+ is installed and accessible via python.
-
-🤝 Contributing
-
-Contributions are welcome!
-
-Fork the repository
-
-Create a feature branch
-
-Commit your changes
-
-Open a Pull Request
-
-Please keep code clean, documented, and modular.
-
-📄 License
+License
 
 This project is licensed under the MIT License.
-You are free to use, modify, and distribute it for personal and commercial purposes.
-
-❤️ Acknowledgment
-
-Built with Python for creative image experimentation.
