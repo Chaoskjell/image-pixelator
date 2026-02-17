@@ -49,21 +49,22 @@ cd image-pixelator
 Install dependencies:
 
 pip install -r requirements.txt
+```
 Requirements:
 
-Python 3.8+
-
-Pillow
-
-OpenCV
-
-NumPy
+-Python 3.8+
+-Pillow
+-OpenCV
+-NumPy
 
 Usage
 Graphical Interface (GUI)
 Launch the GUI:
+```bash
 
 python gui_pixelator.py
+```
+
 GUI Features:
 
 Select an input image
@@ -76,11 +77,17 @@ Export the processed image
 
 Command-Line Interface (CLI)
 Basic usage:
+```bash
 
 python image_pixelator.py input.jpg
+```
+
 With parameters:
+```bash
 
 python image_pixelator.py input.jpg -b 20 -p diagonal -o output.png
+```
+
 CLI Parameters:
 
 Parameter	Short	Description	Default
@@ -89,10 +96,14 @@ input	—	Input image path (required)	—
 --pattern	-p	Pattern type (checkerboard, diagonal, horizontal, vertical)	checkerboard
 --output	-o	Output file name	output.png
 Examples
+```bash
 # Checkerboard pattern with 15x15 blocks
+
 python image_pixelator.py photo.jpg -b 15 -p checkerboard -o result.png
+```
 
 # Diagonal pattern with larger blocks
+```bash
 python image_pixelator.py photo.jpg -b 20 -p diagonal -o stylized.png
 Performance Tips
 Small block sizes (5–10 px): High detail, slower processing
@@ -100,27 +111,33 @@ Small block sizes (5–10 px): High detail, slower processing
 Medium block sizes (15–25 px): Balanced detail and speed
 
 Large block sizes (30+ px): Abstracted style, fast processing
-
+```
 Project Structure
+```bash
 image-pixelator/
 │
 ├── image_pixelator.py      # CLI version
 ├── gui_pixelator.py        # GUI version
 ├── requirements.txt        # Dependencies
 └── README.md               # Project documentation
+```
 Contributing
 Contributions are welcome!
 
 Fork the repository
+```bash
+##Create a feature branch 
+git checkout -b feature-name
 
-Create a feature branch (git checkout -b feature-name)
 
-Commit your changes (git commit -m "Add feature")
+##Commit your changes
+git commit -m "Add feature"
 
-Push to your branch (git push origin feature-name)
+##Push to your branch
+git push origin feature-name
 
 Open a Pull Request
-
+```
 Please keep the code clean, modular, and well-documented.
 
 License
