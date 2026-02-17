@@ -10,22 +10,30 @@ Ein Python-Programm, das Bilder in pixelierte Blöcke mit binären (1/0) Mustern
 - **Farberhaltung**: Behält die Originalfarben durch Durchschnittswertberechnung
 - **Für GitHub bereit**: Vollständig dokumentiert und strukturiert
 
+## Anforderungen 📋
+
+- Python 3.8+
+- Pillow (PIL) - Bildverarbeitung
+- OpenCV (cv2) - Bildverarbeitung
+- NumPy - Numerische Berechnungen
+
+  
+Siehe `requirements.txt` für genaue Versionen.
+  
 ## Installation 📦
-
-### Voraussetzungen
-- Python 3.8 oder höher
-- pip (Python Package Manager)
-
-### Setup
 
 ```bash
 # Repository klonen
-git clone https://github.com/yourusername/image-pixelator.git
+git clone https://github.com/Chaoskjell/image-pixelator.git
 cd image-pixelator
 
 # Dependencies installieren
 pip install -r requirements.txt
 ```
+oder 
+
+Lade die datein als zip herrunter und öfne sie in einem code maniger wie VSC.
+Stelle sicher das alle dipendensis insterlirt sind.
 
 ## Verwendung 🚀
 
@@ -84,15 +92,6 @@ python image_pixelator.py photo.jpg -b 20 -p diagonal -o diagonal.png
    - `0` = Leere Zelle (weiß)
 5. **Speicherung** - Das finale Bild wird als PNG/JPG gespeichert
 
-## Anforderungen 📋
-
-- Python 3.8+
-- Pillow (PIL) - Bildverarbeitung
-- OpenCV (cv2) - Bildverarbeitung
-- NumPy - Numerische Berechnungen
-
-Siehe `requirements.txt` für genaue Versionen.
-
 ## Unterstützte Bildformate 🖼️
 
 - PNG
@@ -126,7 +125,6 @@ Beiträge sind willkommen! Bitte siehe [CONTRIBUTING.md](CONTRIBUTING.md) für D
 ## Roadmap 🛣️
 
 - [ ] GUI mit erweiterten Optionen
-- [ ] Batch-Verarbeitung für mehrere Bilder
 - [ ] Animierte GIF-Unterstützung
 - [ ] Zusätzliche Muster (Noise, Wave, etc.)
 - [ ] Performance-Optimierungen
