@@ -2,20 +2,18 @@ Image Pixelator with Binary Pattern Filter
 
 A Python-based image processing tool that transforms images into stylized pixel art using structured binary patterns.
 
-This project focuses on combining classical pixelation techniques with algorithmic pattern overlays while preserving the original color composition of the image.
+This project combines classical pixelation with algorithmic pattern overlays while preserving the original color composition of the image.
 
 Overview
 
 Image Pixelator converts an input image into square blocks of configurable size.
-For each block, the average RGB color is calculated and applied to a binary pattern structure (1/0 matrix).
-
-The result is a clean, abstracted representation of the original image with geometric texture.
+For each block, the average RGB color is applied to a binary pattern (1/0 matrix), producing an abstracted, geometric representation of the original image.
 
 The application includes:
 
-A graphical user interface (GUI)
+Graphical User Interface (GUI)
 
-A command-line interface (CLI)
+Command-Line Interface (CLI)
 
 Configurable block size
 
@@ -27,7 +25,15 @@ Features
 
 Adjustable pixel block size
 
-Binary pattern rendering (checkerboard, diagonal, horizontal, vertical)
+Binary pattern rendering:
+
+Checkerboard
+
+Diagonal
+
+Horizontal
+
+Vertical
 
 Average color preservation per block
 
@@ -40,16 +46,17 @@ Modular and readable Python implementation
 Installation
 
 Clone the repository:
-
+```bash
 git clone https://github.com/Chaoskjell/image-pixelator.git
 cd image-pixelator
-
+```
 
 Install required dependencies:
-
+```bash
 pip install -r requirements.txt
+```
 
-Requirements
+Requirements:
 
 Python 3.8+
 
@@ -60,14 +67,16 @@ OpenCV (cv2)
 NumPy
 
 Usage
-Graphical Interface
+Graphical Interface (GUI)
 
-Run:
+Run the GUI:
+```bash
 
 python gui_pixelator.py
+```
 
 
-This opens the graphical interface where you can:
+Features:
 
 Select an image
 
@@ -77,16 +86,19 @@ Select a pattern
 
 Export the processed image
 
-Command Line Interface
+Command-Line Interface (CLI)
 
 Basic usage:
-
+```bash
 python image_pixelator.py input.jpg
+```
 
 
 With parameters:
+```bash
 
 python image_pixelator.py input.jpg -b 20 -p diagonal -o output.png
+```
 
 CLI Parameters
 Parameter	Short	Description	Default
@@ -96,53 +108,74 @@ input	—	Input image path (required)	—
 --output	-o	Output file name	output.png
 Available Patterns
 
-checkerboard
+checkerboard – classic alternating blocks
 
-diagonal
+diagonal – diagonal stripes
 
-horizontal
+horizontal – horizontal lines
 
-vertical
+vertical – vertical lines
 
-Each pattern uses a binary structure:
+Binary pattern rules:
 
-1 → colored with block average
+1 → filled with block’s average color
 
-0 → white pixel
+0 → empty/white
 
 How It Works
 
-The image is loaded and converted to RGB format.
+Load image and convert to RGB format.
 
-It is divided into square blocks of size block_size × block_size.
+Divide image into square blocks (block_size × block_size).
 
-The average RGB value is computed for each block.
+Compute the average RGB value for each block.
 
-A predefined binary matrix determines which pixels inside the block are filled.
+Apply the selected binary pattern to each block.
 
-The final image is saved in the specified format.
+Save the final image in the specified format.
 
 Example
+```bash
+
+# Checkerboard pattern with 15x15 blocks
 python image_pixelator.py photo.jpg -b 15 -p checkerboard -o result.png
 
+# Diagonal pattern with larger blocks
+python image_pixelator.py photo.jpg -b 20 -p diagonal -o stylized.png
+```
+
 Project Structure
+```bash
+
 image-pixelator/
 │
-├── image_pixelator.py
-├── gui_pixelator.py
-├── requirements.txt
-└── README.md
+├── image_pixelator.py      # CLI version
+├── gui_pixelator.py        # GUI version
+├── requirements.txt        # Dependencies
+└── README.md               # This file
+```
 
 Performance Considerations
 
-Smaller block sizes produce higher detail and require more processing time.
+Small block sizes (5–10): high detail, slower processing
 
-Larger block sizes increase abstraction and improve performance.
+Medium block sizes (15–25): balanced detail and speed
+
+Large block sizes (30+): abstracted, fast processing
 
 Contributing
 
-Contributions and improvements are welcome.
-Please open an issue or submit a pull request.
+Contributions are welcome!
+
+Fork the repository
+
+Create a feature branch
+
+Commit your changes
+
+Open a Pull Request
+
+Please keep code clean, documented, and modular.
 
 License
 
