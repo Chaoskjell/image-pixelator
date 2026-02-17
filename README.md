@@ -1,138 +1,139 @@
-# Image Pixelator with Binary Pattern Filter 🖼️
+Image Pixelator with Binary Pattern Filter 🟦🟧
 
-Ein Python-Programm, das Bilder in pixelierte Blöcke mit binären (1/0) Mustern umwandelt. Jeder Block wird mit der durchschnittlichen Farbe des Bereichs gefärbt und mit einem Schachbrett-, Diagonal- oder anderen Mustern gefüllt.
+A Python program that converts images into pixelated blocks filled with binary (1/0) patterns.
+Each block is colored using the average color of the region and filled with patterns such as checkerboard, diagonal, horizontal, or vertical stripes.
 
-## Features ✨
+✨ Features
 
-- **Verschiedene Muster**: Schachbrett, Diagonal, Horizontal, Vertikal
-- **Konfigurierbare Blockgröße**: Passe die Pixelgröße an
-- **GUI & CLI**: Benutzerfreundliche Grafische Oberfläche + Kommandozeilenschnittstelle
-- **Farberhaltung**: Behält die Originalfarben durch Durchschnittswertberechnung
-- **Für GitHub bereit**: Vollständig dokumentiert und strukturiert
+Multiple patterns: checkerboard, diagonal, horizontal, vertical
 
-## Anforderungen 📋
+Configurable block size: adjust the size of the pixel blocks
 
-- Python 3.8+
-- Pillow (PIL) - Bildverarbeitung
-- OpenCV (cv2) - Bildverarbeitung
-- NumPy - Numerische Berechnungen
+Both GUI and CLI: user-friendly graphical interface + command line support
 
-  
-Siehe `requirements.txt` für genaue Versionen.
-  
-## Installation 📦
+Color retention: preserves the original colors by calculating average block color
 
-```bash
-# Repository klonen
+Fully documented and structured for GitHub
+
+🧩 Requirements
+
+Python 3.8+
+
+Pillow (PIL) — image processing
+
+OpenCV (cv2) — image processing
+
+NumPy — numerical computations
+
+Please refer to requirements.txt for exact versions.
+
+🚀 Installation
+
+Clone the repository and install dependencies:
+
+# Clone the repo
 git clone https://github.com/Chaoskjell/image-pixelator.git
 cd image-pixelator
 
-# Dependencies installieren
+# Install dependencies
 pip install -r requirements.txt
-```
-oder 
 
-Lade die datein als zip herrunter und öfne sie in einem code maniger wie VSC.
-Stelle sicher das alle dipendensis insterlirt sind.
 
-## Verwendung 🚀
+Alternatively, download the ZIP and open it in a code editor like VS Code — just make sure all dependencies are installed.
 
-### GUI starten (einfach)
-
-```bash
+📌 Usage
+🖥️ Start the GUI (simple)
 python gui_pixelator.py
-```
 
-### CLI verwenden (erweitert)
+📟 Use the CLI (advanced)
 
-```bash
-# Grundlegende Nutzung
+Basic usage:
+
 python image_pixelator.py input.jpg
 
-# Mit Optionen
+
+With options:
+
 python image_pixelator.py input.jpg -b 15 -p diagonal -o output.png
-```
 
-### CLI Parameter
+🧠 CLI Parameters
+Parameter	Short	Description	Default
+input	-	Path to input image (required)	—
+--block-size	-b	Size of pixel blocks	10
+--pattern	-p	Pattern type	checkerboard
+--output	-o	Output file path	output.png
+🎨 Available Patterns
 
-| Parameter | Kurz | Beschreibung | Standard |
-|-----------|------|-------------|----------|
-| Input | `-` | Eingabedatei-Pfad | **erforderlich** |
-| --block-size | `-b` | Größe der Pixelblöcke | 10 |
-| --pattern | `-p` | Mustertyp | checkerboard |
-| --output | `-o` | Ausgabedatei-Pfad | output_[pattern].png |
+checkerboard — classic checker pattern
 
-### Verfügbare Muster
+diagonal — diagonal stripes
 
-- **checkerboard** - Klassisches Schachbrettmuster
-- **diagonal** - Diagonale Linien
-- **horizontal** - Horizontale Streifen
-- **vertical** - Vertikale Streifen
+horizontal — horizontal lines
 
-## Beispiele 💡
+vertical — vertical lines
 
-```bash
-# GUI starten
+📷 Examples
+# Run GUI
 python gui_pixelator.py
 
-# CLI: Schachbrettmuster mit 10x10 Pixeln
+# CLI: Checkerboard with 10x10 blocks
 python image_pixelator.py photo.jpg -b 10 -p checkerboard -o output.png
 
-# CLI: Diagonales Muster mit größeren Blöcken
+# CLI: Diagonal pattern with larger blocks
 python image_pixelator.py photo.jpg -b 20 -p diagonal -o diagonal.png
-```
-
-## Wie es funktioniert 🔧
-
-1. **Laden** - Das Eingabebild wird geladen und in RGB konvertiert
-2. **Blockierung** - Das Bild wird in Blöcke der Größe `block_size × block_size` unterteilt
-3. **Farbberechnung** - Für jeden Block wird die Durchschnittsfarbe berechnet
-4. **Musterzeichnung** - Der Block wird mit dem gewählten Muster in der berechneten Farbe gefüllt:
-   - `1` = Farbzelle (gefüllt)
-   - `0` = Leere Zelle (weiß)
-5. **Speicherung** - Das finale Bild wird als PNG/JPG gespeichert
-
-## Unterstützte Bildformate 🖼️
-
-- PNG
-- JPG/JPEG
-- BMP
-- GIF
-- TIFF
-
-## Performance ⚡
-
-| Blockgröße | Schnelligkeit | Details |
-|-----------|---------------|---------|
-| 5-15 | Mittel | Gutes Detail-Muster-Balance |
-| 15-25 | Schnell | Grosse Blöcke, weniger Details |
-| 25+ | Sehr schnell | Minimales Muster-Detail |
-
-## Lizenz 📄
-
-MIT License - Kostenlos für persönliche und kommerzielle Nutzung. Siehe [LICENSE](LICENSE) für Details.
-
-## Beitragen 🤝
-
-Beiträge sind willkommen! Bitte siehe [CONTRIBUTING.md](CONTRIBUTING.md) für Details.
-
-## Community 💬
-
-- 📧 [Issues](../../issues) - Bugs melden
-- 💡 [Discussions](../../discussions) - Fragen & Ideen
-- 🤝 [Pull Requests](../../pulls) - Beiträge
-
-## Roadmap 🛣️
-
-- [ ] GUI mit erweiterten Optionen
-- [ ] Animierte GIF-Unterstützung
-- [ ] Zusätzliche Muster (Noise, Wave, etc.)
-- [ ] Performance-Optimierungen
-
-## Kontakt 📧
-
-Bei Fragen oder Problemen öffne bitte ein [Issue](../../issues) auf GitHub!
+``` :contentReference[oaicite:5]{index=5}
 
 ---
 
-**Made with ❤️ in Python**
+## 🔍 How It Works
+
+1. **Load** — input image is loaded and converted to RGB  
+2. **Block Division** — the image is split into `block_size × block_size` blocks  
+3. **Color Calculation** — average color is calculated for each block  
+4. **Pattern Draw** — the chosen pattern is drawn using:
+   * `1` = filled cell with average color  
+   * `0` = empty cell (white)  
+5. **Save** — the final image is saved as PNG/JPG :contentReference[oaicite:6]{index=6}
+
+---
+
+## 📦 Supported Image Formats
+
+- PNG  
+- JPG/JPEG  
+- BMP  
+- GIF  
+- TIFF :contentReference[oaicite:7]{index=7}
+
+---
+
+## ⚡ Performance
+
+- Smaller blocks (5–15): moderate speed with good detail  
+- Medium blocks (15–25): faster with less detail  
+- Large blocks (25+): very fast with minimal detail :contentReference[oaicite:8]{index=8}
+
+---
+
+## 🧠 Contributing
+
+Contributions are welcome!  
+Please see `CONTRIBUTING.md` for details on reporting bugs, opening issues, or submitting pull requests. :contentReference[oaicite:9]{index=9}
+
+---
+
+## 📞 Contact
+
+If you have questions or problems, feel free to open an issue on GitHub. :contentReference[oaicite:10]{index=10}
+
+---
+
+## ❤️ About
+
+Made with ❤️ in Python.  
+MIT Licensed — free for personal and commercial use. :contentReference[oaicite:11]{index=11}
+
+---
+
+Wenn du möchtest, kann ich dir die **README auch automatisch als Markdown-Datei** formatieren (z. B. mit TOC, Badges etc.) oder anpassen (z. B. Projektbeschreibung erweitern).
+::contentReference[oaicite:12]{index=12}
